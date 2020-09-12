@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Input area -->
+    <button type="button" name='' onclick="bleep.play()">नमस्कार.इथे क्लिक करा'</button><br>
+    <button type="button" onclick="beep.play()">नाव</button><br>
+    <input type="text" name="" id="speechToText" placeholder="बोला" onclick="record()"><br>
+    <button type="button" onclick="beeps.play()">आडनाव</button><br>
+    <input type="text" name="snm" id="speech" placeholder="बोला" onclick="rec()"><br>
+    <button type="button" onclick="bep.play()">शिफारस</button><br>
+    <input type="text" id ="speechToTex" placeholder="बोला" onclick="records()"><br>
+    <input type='submit' value="SUBMIT">
+
+    <!-- Below is the script for voice recognition and conversion to text-->
+    <script>
+        var bleep = new Audio();
+        bleep.src = "translate_tts.mp3";
+
+        var beep = new Audio()
+        beep.src = "translate_tts1.mp3"
+
+        var beeps = new Audio()
+        beeps.src = "translate_tts2.mp3"
+
+        var bep = new Audio()
+        bep.src = "translate_tts3.mp3"
+
+        function record() {
+            var recognition = new webkitSpeechRecognition();
+            recognition.lang = "mr";    
+            recognition.onresult = function(event) {
+                // console.log(event);
+                document.getElementById('speechToText').value = event.results[0][0].transcript;
+            }
+            recognition.start();
+
+        }
+
+        function rec(){
+            var recog = new webkitSpeechRecognition();
+            recog.lang = 'mr';
+            recog.onresult = function(event){
+                document.getElementById('speech').value = event.results[0][0].transcript;
+            }
+            recog.start()
+        }
+            function records(){
+            var recogn = new webkitSpeechRecognition();
+            recogn.lang = 'mr';
+            recogn.onresult = function(event){
+                document.getElementById('speechToTex').value = event.results[0][0].transcript;
+            }
+            recogn.start()    
+        }
+    </script>
+    <!-- end of script -->
+</body>
+</html>
