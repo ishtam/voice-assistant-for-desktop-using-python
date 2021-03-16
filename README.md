@@ -1,1 +1,3 @@
 # voice-assistant-for-desktop-using-python
+
+Artificial intelligence(AI), machine learning(ML) and voice recognition technology are used to build this voice assistant. This project helps the people of all generations, in every part of India use technology just as easily as they do in their daily routine. We have used python to build our desktop-based voice assistant, mainly focusing on the rural community of Maharashtra, India. The proposed system takes the speech as the input and convert it into the text form and the required task will be executed as per the user’s request. The data set of our project includes regional languages like Hindi and Marathi.
